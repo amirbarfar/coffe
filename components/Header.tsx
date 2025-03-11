@@ -6,7 +6,6 @@ import { SetStateAction, useState } from "react"
 
 export default function Header() {
 
-    const [searchHandler, setSearchHandler] = useState(false)
     const [menuHandler, setMenuHandler] = useState(false)
     const [basket, setBasket] = useState(false)
     const [toggleMode, setToggleMode] = useState(false)
