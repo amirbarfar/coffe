@@ -20,7 +20,7 @@ export default function Header() {
     }
 
     return (
-        <div className="flex justify-between items-center py-5 font-medium max-sm:px-5 px-2 dark:bg-slate-800">
+        <div className="flex justify-between items-center py-1 font-medium max-sm:px-5 px-2 dark:bg-slate-800">
             <div className="flex justify-start items-center gap-5 max-xl:gap-0 max-md:gap-2">
                 <Image
                     className="max-md:hidden max-lg:w-32"
@@ -128,7 +128,7 @@ export default function Header() {
                     </svg>
                 </div>
                 <button className="cursor-pointer text-lg max-sm:text-sm max-md:hidden max-xl:text-base">ورود | عضویت</button>
-                <div onClick={() => setToggleMode((curr) => !curr)} className="w-8 h-12 cursor-pointer max-md:hidden flex justify-center items-center rounded-full">
+                <div onClick={ () => {setToggleMode((curr) => !curr) ; darkAndLIghtMode()} } className="w-8 h-12 duration-500 transition-all ease-in-out  cursor-pointer max-md:hidden flex  justify-center items-center rounded-full">
                     {
                         toggleMode ? (
                             <svg className="w-6 h-6 max-sm:h-5 max-lg:w-5" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
