@@ -63,7 +63,7 @@ export default function Header() {
                         </ul>
                         <div className="w-auto mx-3 md:hidden dark:border-1 dark:border-slate-400 h-12 my-5 px-2 flex justify-center items-center border-2 rounded-lg max-sm:text-sm">
                             <input type="text" className="w-full  dark:bg-slate-800 dark:text-white text-black h-full rounded-lg px-3 bg-white outline-0" placeholder="دنبال چی میگردی ؟" />
-                            <svg width="24" height="24" viewBox="0 0 24 24" className="fill-none">                                                                                                                                                                                   white" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="24" height="24" viewBox="0 0 24 24" className="fill-none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M22 22L17.5 17.5M20 11C20 15.9706 15.9706 20 11 20C6.02944 20 2 15.9706 2 11C2 6.02944 6.02944 2 11 2C15.9706 2 20 6.02944 20 11Z" stroke="black" className="dark:stroke-white" strokeWidth="2" strokeLinecap="round" />
                             </svg>
                         </div>
