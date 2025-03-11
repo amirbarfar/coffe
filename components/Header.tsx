@@ -69,7 +69,7 @@ export default function Header() {
                         </div>
                         <div className="w-auto h-12 mx-2 text-center">
                             <div className="duration-300 cursor-pointer hover:bg-blue-600 transition-all bg-blue-500 h-full w-full rounded-lg">
-                                <div onClick={() => { setToggleMode((curr) => !curr), darkAndLIghtMode}} className="w-full h-12 text-white hidden max-md:flex max-sm:h-10 cursor-pointer justify-center px-2 items-center gap-2 rounded-full">
+                                <div onClick={() => { setToggleMode((curr) => !curr); darkAndLIghtMode() }} className="w-full h-12 text-white hidden max-md:flex max-sm:h-10 cursor-pointer justify-center px-2 items-center gap-2 rounded-full">
                                     {
                                         toggleMode ? (
                                             <div className="flex justify-center items-center gap-1 rounded-lg">
