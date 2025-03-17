@@ -53,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body>
+      <body className="dark:bg-black">
         {children}
       </body>
     </html>
