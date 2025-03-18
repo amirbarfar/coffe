@@ -18,7 +18,7 @@ export default function Login() {
           </div>
           <div className="grid col-span-8 gap-2 items-center mt-5 max-lg:text-sm">
             <button className="w-full h-12 col-start-1 col-end-7 rounded-md max-lg:h-11 hover:bg-[#1b1b1b] bg-[#2B2B2B] duration-300 cursor-pointer transition-all text-white">ورود</button>
-            <Link className="col-start-7 col-end-9 h-12 bg-white border-2 max-lg:h-11 text-black hover:bg-[#2B2B2B] hover:text-white rounded-md duration-300 transition-all flex justify-center items-center" href={'/registe'}>ثبت نام؟</Link>
+            <Link className="col-start-7 col-end-9 h-12 bg-white border-2 max-lg:h-11 text-black hover:bg-[#2B2B2B] hover:text-white rounded-md duration-300 transition-all flex justify-center items-center" href={'/register'}>ثبت نام؟</Link>
           </div>
         </form>
       </div>
