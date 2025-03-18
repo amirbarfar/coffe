@@ -22,13 +22,15 @@ export default function Header() {
     }
 
     useEffect(() => {
-        const result: string | null= localStorage.getItem('mode')
+        const result: string | null = localStorage.getItem('mode')
         if (result === 'dark') {
             setToggleMode(!toggleMode)
         } else {
             setToggleMode(false)
         }
-        document.documentElement.classList.add(result)
+        if (result) {
+            document.documentElement.classList.add(result)
+        }
     }, [])
 
     return (
