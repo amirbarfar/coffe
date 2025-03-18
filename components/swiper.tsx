@@ -24,13 +24,13 @@ export default function swiper() {
             >
 
                 <SwiperSlide>
-                    <Image src="/images/swiper-images/1.jpg" alt="" width={200} height={200}/>
+                    <Image src="/images/swiper-images/1.jpg" alt="" width={1800} height={1800}/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image src="/images/swiper-images/2.jpg" alt="" width={200} height={200}/>
+                    <Image src="/images/swiper-images/2.jpg" alt="" width={1800} height={1800}/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <Image src="/images/swiper-images/3.jpg" alt="" width={200} height={200}/>
+                    <Image src="/images/swiper-images/3.jpg" alt="" width={1800} height={1800}/>
                 </SwiperSlide>
             </Swiper>
 
