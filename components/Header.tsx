@@ -22,7 +22,7 @@ export default function Header() {
     }
 
     useEffect(() => {
-        const result: null | any = localStorage.getItem('mode')
+        const result: string | null= localStorage.getItem('mode')
         if (result === 'dark') {
             setToggleMode(!toggleMode)
         } else {

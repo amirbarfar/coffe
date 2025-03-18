@@ -1,5 +1,5 @@
 'use client';
-
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
@@ -24,13 +24,13 @@ export default function swiper() {
             >
 
                 <SwiperSlide>
-                    <img src="/images/swiper-images/1.jpg" alt="" />
+                    <Image src="/images/swiper-images/1.jpg" alt="" width={200} height={200}/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/images/swiper-images/2.jpg" alt="" />
+                    <Image src="/images/swiper-images/2.jpg" alt="" width={200} height={200}/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src="/images/swiper-images/3.jpg" alt="" />
+                    <Image src="/images/swiper-images/3.jpg" alt="" width={200} height={200}/>
                 </SwiperSlide>
             </Swiper>
 
@@ -48,13 +48,13 @@ export default function swiper() {
                 >
 
                     <SwiperSlide>
-                        <img className="w-full" src="/images/swiper-images/barista/1.webp" alt="" />
+                        <Image className="w-full" src="/images/swiper-images/barista/1.webp" alt="" width={200} height={200}/>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img className="w-full" src="/images/swiper-images/barista/2.webp" alt="" />
+                        <Image className="w-full" src="/images/swiper-images/barista/2.webp" alt="" width={200} height={200}/>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img className="w-full" src="/images/swiper-images/barista/3.webp" alt="" />
+                        <Image className="w-full" src="/images/swiper-images/barista/3.webp" alt="" width={200} height={200}/>
                     </SwiperSlide>
                 </Swiper>
                 <Swiper
@@ -70,13 +70,13 @@ export default function swiper() {
                 >
 
                     <SwiperSlide>
-                        <img className="w-full" src="/images/swiper-images/bartender/1.jpg" alt="" />
+                        <Image className="w-full" src="/images/swiper-images/bartender/1.jpg" alt="" width={200} height={200}/>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img className="w-full" src="/images/swiper-images/bartender/2.jpg" alt="" />
+                        <Image className="w-full" src="/images/swiper-images/bartender/2.jpg" alt="" width={200} height={200}/>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img className="w-full" src="/images/swiper-images/bartender/3.jpg" alt="" />
+                        <Image className="w-full" src="/images/swiper-images/bartender/3.jpg" alt="" width={200} height={200}/>
                     </SwiperSlide>
                 </Swiper>
             </div>
