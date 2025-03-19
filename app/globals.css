@@ -53,6 +53,11 @@
     --sidebar-ring:oklch(0.705 0.015 286.067);
     --background:oklch(1 0 0);
     --foreground:oklch(0.141 0.005 285.823);
+    --color-1:hsl(0 100% 63%);
+    --color-2:hsl(270 100% 63%);
+    --color-3:hsl(210 100% 63%);
+    --color-4:hsl(195 100% 63%);
+    --color-5:hsl(90 100% 63%);
 }
 
 .dark {
@@ -88,6 +93,11 @@
     --sidebar-accent-foreground:oklch(0.985 0 0);
     --sidebar-border:oklch(0.274 0.006 286.033);
     --sidebar-ring:oklch(0.442 0.017 285.786);
+    --color-1:hsl(0 100% 63%);
+    --color-2:hsl(270 100% 63%);
+    --color-3:hsl(210 100% 63%);
+    --color-4:hsl(195 100% 63%);
+    --color-5:hsl(90 100% 63%);
 }
 
 @theme inline {
@@ -127,6 +137,21 @@
     --color-sidebar-accent-foreground:var(--sidebar-accent-foreground);
     --color-sidebar-border:var(--sidebar-border);
     --color-sidebar-ring:var(--sidebar-ring);
+    --color-color-5:var(----color-5);
+    --color-color-4:var(----color-4);
+    --color-color-3:var(----color-3);
+    --color-color-2:var(----color-2);
+    --color-color-1:var(----color-1);
+  --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
+
+  @keyframes rainbow {
+    0% {
+      background-position: 0%;
+        }
+    100% {
+      background-position: 200%;
+        }
+    }
 }
 
 @layer base {
