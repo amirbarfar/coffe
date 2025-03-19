@@ -1,6 +1,6 @@
 {
-    "theme_color": "#3E2723",
-    "background_color": "#6F4F37",
+    "theme_color": "#3B2F2F",
+    "background_color": "#3B2F2F",
     "icons": [
         {
             "purpose": "maskable",
@@ -26,7 +26,12 @@
     "orientation": "any",
     "display": "standalone",
     "dir": "auto",
-    "lang": "en-US",
+    "lang": "fa-ir",
     "name": "بارنستا",
+    "font": {
+        "display": "swap",
+        "family": "bold"
+    },
+    "deccription" : "با بارنستا یادگیریش آسون میشه :)",
     "start_url": "/"
 }
