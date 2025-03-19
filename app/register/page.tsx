@@ -2,15 +2,18 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { useEffect } from "react"
 
 export default function page() {
 
+    useEffect(() => {
       const result = localStorage.getItem('mode')
       if (result === 'dark') {
         document.documentElement.classList.add('dark')
       } else {
         document.documentElement.classList.remove('dark')
       }
+    }, [])
 
   return (
     <div className="container mx-auto my-36 max-md:my-8 font-bold flex justify-between items-center gap-10 max-lg:gap-5 max-sm:gap-10 max-md:flex-col-reverse max-md:px-5">
