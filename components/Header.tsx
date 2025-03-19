@@ -44,9 +44,12 @@ export default function Header() {
                     height={160}
                 />
                 <nav>
-                    <div className={`${menuHandler ? 'max-xl:opacity-100 max-xl:scale-100 max-xl:right-0' : 'max-mxlscale-80 max-xl:opacity-0 max-xl:-right-72'} right-0 transition-all z-20 transform duration-500 ease-in-out flex justify-center items-center gap-8 max-xl:absolute max-xl:block top-0 max-xl:border-2 text-lg max-xl:bg-white max-sm:rounded-br-none max-sm:rounded-tr-none dark:bg-black max-xl:leading-7 max-xl:w-72 max-sm:text-sm max-xl:text-sm max-xl:min-h-screen max-xl:rounded-md`}>
+                    <div className={`${menuHandler ? 'max-xl:opacity-100 max-xl:scale-100 max-xl:right-0' : 'max-scale-80 max-xl:opacity-0 max-xl:-right-72'} right-0 transition-all z-20 transform duration-500 ease-in-out flex justify-center items-center gap-8 max-xl:absolute max-xl:block top-0 max-xl:border-2 text-lg max-xl:bg-white max-sm:rounded-br-none max-sm:rounded-tr-none dark:bg-black max-xl:leading-7 max-xl:w-72 max-sm:text-sm max-xl:text-sm max-xl:min-h-screen`}>
                         <div className={`max-xl:${menuHandler ? 'opacity-100 scale-100' : "opacity-0 scale-90"} flex h-24 justify-start dark:bg-[#111111] absolute xl:opacity-0 items-center top-0 w-full max-lg:bg-[#f4f4f4]`}>
-                            <Image
+                            <div className=" w-full">
+                                <Link href={'/login'} className="flex justify-center items-center text-lg">ورود | عضویت</Link>
+                            </div>
+                            {/* <Image
                                 className="rounded-full m-2"
                                 src="/images/noimage.jpg"
                                 alt="Logo"
@@ -56,7 +59,7 @@ export default function Header() {
                             <div>
                                 <h2>امیرحسین برفر</h2>
                                 <p>چهارشنبه 15 اسفند 1403</p>
-                            </div>
+                            </div> */}
                         </div>
                         <ul className="my-2 text-lg max-md:border-b-2 dark:border-slate-500 max-xl:px-5 max-md:pb-6 md:pt-2 md:px-2 flex justify-center items-center max-xl:items-start gap-5 max-xl:flex-col max-xl:mt-28">
                             <li>
@@ -81,14 +84,6 @@ export default function Header() {
                                     {
                                         toggleMode ? (
                                             <div className="flex justify-center items-center gap-1 rounded-lg">
-                                                <svg className="w-5 h-5" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path color="white" fillRule="evenodd" clipRule="evenodd" d="M19.9358 14.3652C20.0691 14.0415 19.9906 13.6679 19.7389 13.4276C19.4872 13.1873 19.115 13.1308 18.8051 13.2857C17.7584 13.8091 16.5801 14.1034 15.3317 14.1034C10.9835 14.1034 7.45846 10.5246 7.45846 6.1098C7.45846 4.32254 8.0352 2.67449 9.01033 1.34372C9.21644 1.06244 9.22917 0.680892 9.04229 0.386091C8.85541 0.0912907 8.50809 -0.054977 8.17055 0.0189828C3.50017 1.04235 2.17361e-07 5.25905 0 10.3077C-2.50276e-07 16.1208 4.64155 20.8333 10.3672 20.8333C14.6778 20.8333 18.372 18.1625 19.9358 14.3652Z" fill="currentColor"></path>
-                                                    <path color="white" fillRule="evenodd" clipRule="evenodd" d="M13.0928 3.67116L13.7596 1.84183C13.9751 1.25035 14.4797 0.939795 14.9987 0.910156C15.5177 0.939795 16.0222 1.25035 16.2378 1.84183L16.9045 3.67116L18.7063 4.34807C19.9329 4.8089 19.9329 6.57032 18.7063 7.03114L16.9045 7.70806L16.2378 9.53738C16.0222 10.1289 15.5177 10.4394 14.9987 10.4691C14.4797 10.4394 13.9751 10.1289 13.7596 9.53738L13.0928 7.70806L11.2911 7.03114C10.0644 6.57032 10.0644 4.8089 11.2911 4.34807L13.0928 3.67116Z" fill="currentColor" fillOpacity="0.4"></path>
-                                                </svg>
-                                                <p>لایت مود</p>
-                                            </div>
-                                        ) : (
-                                            <div className="flex justify-center gap-1 items-center rounded-lg">
                                                 <svg className="w-6 h-6" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path color="white" fillRule="evenodd" clipRule="evenodd" d="M11.8025 18.0871C7.03723 18.0871 5.4658 16.5156 5.51682 11.8013C5.56785 7.08705 7.03723 5.51562 11.8025 5.51562C16.5678 5.51562 18.0882 7.08705 18.0882 11.8013C18.0882 16.5156 16.5678 18.0871 11.8025 18.0871Z" fill="currentColor"></path>
                                                     <path color="white" d="M11.8008 0.800781C12.2347 0.800781 12.5865 1.15256 12.5865 1.5865V3.15792C12.5865 3.59186 12.2347 3.94364 11.8008 3.94364C11.3668 3.94364 11.0151 3.59186 11.0151 3.15792V1.5865C11.0151 1.15256 11.3668 0.800781 11.8008 0.800781Z" fill="currentColor" fillOpacity="0.4"></path>
@@ -100,6 +95,14 @@ export default function Header() {
                                                     <path color="white" d="M20.5388 3.38805C20.232 3.08121 19.7345 3.08121 19.4277 3.38805L18.3165 4.49922C18.0097 4.80606 18.0097 5.30355 18.3165 5.61039C18.6233 5.91723 19.1208 5.91723 19.4277 5.61039L20.5388 4.49922C20.8457 4.19238 20.8457 3.6949 20.5388 3.38805Z" fill="currentColor" fillOpacity="0.4"></path>
                                                     <path color="white" d="M19.4277 20.5388C19.7345 20.8457 20.232 20.8457 20.5388 20.5388C20.8457 20.232 20.8457 19.7345 20.5388 19.4277L19.4277 18.3165C19.1208 18.0097 18.6233 18.0097 18.3165 18.3165C18.0097 18.6233 18.0097 19.1208 18.3165 19.4277L19.4277 20.5388Z" fill="currentColor" fillOpacity="0.4"></path>
                                                 </svg>
+                                                <p>لایت مود</p>
+                                            </div>
+                                        ) : (
+                                            <div className="flex justify-center gap-1 items-center rounded-lg">
+                                                <svg className="w-5 h-5" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path color="white" fillRule="evenodd" clipRule="evenodd" d="M19.9358 14.3652C20.0691 14.0415 19.9906 13.6679 19.7389 13.4276C19.4872 13.1873 19.115 13.1308 18.8051 13.2857C17.7584 13.8091 16.5801 14.1034 15.3317 14.1034C10.9835 14.1034 7.45846 10.5246 7.45846 6.1098C7.45846 4.32254 8.0352 2.67449 9.01033 1.34372C9.21644 1.06244 9.22917 0.680892 9.04229 0.386091C8.85541 0.0912907 8.50809 -0.054977 8.17055 0.0189828C3.50017 1.04235 2.17361e-07 5.25905 0 10.3077C-2.50276e-07 16.1208 4.64155 20.8333 10.3672 20.8333C14.6778 20.8333 18.372 18.1625 19.9358 14.3652Z" fill="currentColor"></path>
+                                                    <path color="white" fillRule="evenodd" clipRule="evenodd" d="M13.0928 3.67116L13.7596 1.84183C13.9751 1.25035 14.4797 0.939795 14.9987 0.910156C15.5177 0.939795 16.0222 1.25035 16.2378 1.84183L16.9045 3.67116L18.7063 4.34807C19.9329 4.8089 19.9329 6.57032 18.7063 7.03114L16.9045 7.70806L16.2378 9.53738C16.0222 10.1289 15.5177 10.4394 14.9987 10.4691C14.4797 10.4394 13.9751 10.1289 13.7596 9.53738L13.0928 7.70806L11.2911 7.03114C10.0644 6.57032 10.0644 4.8089 11.2911 4.34807L13.0928 3.67116Z" fill="currentColor" fillOpacity="0.4"></path>
+                                                </svg>
                                                 <p>دارک مود</p>
                                             </div>
                                         )
@@ -107,16 +110,16 @@ export default function Header() {
                                 </div>
                             </div>
                         </div>
-                        <div className="max-xl:flex hidden w-full h-12 justify-center items-center mt-3 ">
+                        {/* <div className="max-xl:flex hidden w-full h-12 justify-center items-center mt-3 ">
                             <button className="w-full h-full mx-2 bg-red-500 duration-300 cursor-pointer hover:bg-red-600 transition-all ease-in-out text-white rounded-lg">خروج از حساب کاربری</button>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="max-xl:block hidden max-sm:w-8" onClick={() => setMenuHandler((curr) => !curr)}>
                         <svg className="w-6 h-6 max-sm:w-5" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 1C0 0.734784 0.105357 0.48043 0.292893 0.292893C0.48043 0.105357 0.734784 0 1 0H17C17.2652 0 17.5196 0.105357 17.7071 0.292893C17.8946 0.48043 18 0.734784 18 1C18 1.26522 17.8946 1.51957 17.7071 1.70711C17.5196 1.89464 17.2652 2 17 2H1C0.734784 2 0.48043 1.89464 0.292893 1.70711C0.105357 1.51957 0 1.26522 0 1ZM17 4H7C6.73478 4 6.48043 4.10536 6.29289 4.29289C6.10536 4.48043 6 4.73478 6 5C6 5.26522 6.10536 5.51957 6.29289 5.70711C6.48043 5.89464 6.73478 6 7 6H17C17.2652 6 17.5196 5.89464 17.7071 5.70711C17.8946 5.51957 18 5.26522 18 5C18 4.73478 17.8946 4.48043 17.7071 4.29289C17.5196 4.10536 17.2652 4 17 4ZM17 8H1C0.734784 8 0.48043 8.10536 0.292893 8.29289C0.105357 8.48043 0 8.73478 0 9C0 9.26522 0.105357 9.51957 0.292893 9.70711C0.48043 9.89464 0.734784 10 1 10H17C17.2652 10 17.5196 9.89464 17.7071 9.70711C17.8946 9.51957 18 9.26522 18 9C18 8.73478 17.8946 8.48043 17.7071 8.29289C17.5196 8.10536 17.2652 8 17 8ZM17 12H7C6.73478 12 6.48043 12.1054 6.29289 12.2929C6.10536 12.4804 6 12.7348 6 13C6 13.2652 6.10536 13.5196 6.29289 13.7071C6.48043 13.8946 6.73478 14 7 14H17C17.2652 14 17.5196 13.8946 17.7071 13.7071C17.8946 13.5196 18 13.2652 18 13C18 12.7348 17.8946 12.4804 17.7071 12.2929C17.5196 12.1054 17.2652 12 17 12Z" fill="#201600" className="dark:fill-white " />
                         </svg>
                     </div>
-                    <label onClick={() => setMenuHandler(false)} className={`${menuHandler ? 'block' : 'hidden'} bg-black opacity-50 w-dvw h-dvh top-0 right-0 absolute`}></label>
+                    <label onClick={() => setMenuHandler(false)} className={`${menuHandler ? 'block' : 'hidden'} bg-black opacity-50 w-dvw h-dvh top-0 right-0 absolute z-10`}></label>
                 </nav>
                 <Image
                     className="max-xl:block hidden max-sm:w-30"
@@ -160,8 +163,8 @@ export default function Header() {
                 </div>
             </div>
 
-            <label onClick={() => setBasket(false)} className={`${basket ? 'block' : 'hidden'} bg-black opacity-50 w-dvw h-dvh top-0 right-0 absolute`}></label>
-            <div className={`${basket ? 'scale-100 opacity-100' : 'opacity-0 scale-90'} duration-300 dark:bg-slate-900 absolute z-20 bg-white right-[75%] left-[20%] max-2xl:right-[70%] translate-x-[50%] max-sm:w-96 max-sm:left-[50%] max-sm:right-[50%] max-sm:translate-x-[50%] not-first:top-24 rounded-md transform transition-all w-96 h-52 border-2`}>
+            <label onClick={() => setBasket(false)} className={`${basket ? 'block' : 'hidden'} bg-black opacity-50 w-dvw h-dvh top-0 right-0 absolute z-10`}></label>
+            <div className={`${basket ? 'scale-100 opacity-100' : 'opacity-0 scale-90'} duration-300 dark:bg-black absolute z-20 bg-white right-[75%] left-[20%] max-2xl:right-[70%] translate-x-[50%] max-sm:w-80 max-sm:left-[50%] max-sm:right-[50%] max-sm:translate-x-[50%] not-first:top-24 rounded-md transform transition-all w-96 h-52 border-2`}>
                 <div className="flex justify-between items-center border-b-2 p-3 text-sm">
                     <h2>سبد خرید من</h2>
                     <p><span>0</span> دوره</p>

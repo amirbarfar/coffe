@@ -1,7 +1,20 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Login() {
+
+  useEffect(() => {
+    const result = localStorage.getItem('mode')
+    if (result === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [])
+
   return (
     <div className="container mx-auto my-36 max-md:my-8 font-bold flex justify-between items-center gap-10 max-md:flex-col-reverse max-md:px-5">
       <div className="basis-1/2">

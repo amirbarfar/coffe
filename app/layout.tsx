@@ -53,6 +53,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+      </head>
       <body className="dark:bg-black">
         {children}
       </body>
