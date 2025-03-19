@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useEffect } from "react"
 
-export default function page() {
+export default function Page() {
 
     useEffect(() => {
       const result = localStorage.getItem('mode')
