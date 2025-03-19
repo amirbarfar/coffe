@@ -37,7 +37,7 @@ export default function Navbar() {
 
     return (
         <div className="flex justify-between items-center py-1 font-medium px-2 mb-10 max-sm:px-0">
-            <div className="absolute container mx-auto flex -z-10 h-[1600px] w-[99%] items-center justify-center overflow-hidden rounded-lg bg-background">
+            <div className="absolute container mx-auto flex -z-10 h-[1600px] w-[99%] max-xl:px-2 max-2xl:px-1 items-center justify-center overflow-hidden rounded-lg bg-background">
                 <AnimatedGridPattern
                     numSquares={30}
                     maxOpacity={0.1}
@@ -57,7 +57,7 @@ export default function Navbar() {
                     height={160}
                 />
                 <nav>
-                    <div className={`${menuHandler ? 'max-xl:opacity-100 max-xl:scale-100 max-xl:right-0' : 'max-scale-80 max-xl:opacity-0 max-xl:-right-72'} dark:bg-transparent right-0 transition-all  z-20 transform duration-500 ease-in-out flex justify-center items-center gap-8 max-xl:absolute max-xl:block top-0 max-xl:border-2 text-lg max-xl:bg-white max-sm:rounded-br-none max-sm:rounded-tr-none max-xl:leading-7 max-xl:w-72 max-sm:text-sm max-xl:text-sm max-xl:min-h-screen`}>
+                    <div className={`${menuHandler ? 'max-xl:opacity-100 max-xl:scale-100 max-xl:right-0' : 'max-scale-80 max-xl:opacity-0 max-xl:-right-72'} dark:bg-black xl:dark:bg-transparent right-0 transition-all  z-20 transform duration-500 ease-in-out flex justify-center items-center gap-8 max-xl:absolute max-xl:block top-0 max-xl:border-2 text-lg max-xl:bg-white max-sm:rounded-br-none max-sm:rounded-tr-none max-xl:leading-7 max-xl:w-72 max-sm:text-sm max-xl:text-sm max-xl:min-h-screen`}>
                         <div className={`max-xl:${menuHandler ? 'opacity-100 scale-100' : "opacity-0 scale-90"} flex h-24 justify-start dark:bg-[#111111] absolute xl:opacity-0 items-center top-0 w-full max-lg:bg-[#f4f4f4]`}>
                             <Link href={'/login'} className="flex justify-center items-center text-lg w-full">ورود | عضویت</Link>
                             {/* <Image
