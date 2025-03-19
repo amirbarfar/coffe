@@ -37,7 +37,7 @@ export default function Navbar() {
 
     return (
         <div className="flex justify-between items-center py-1 font-medium px-2 mb-10 max-sm:px-0">
-            <div className="absolute container mx-auto flex -z-10 h-[1600px] w-full items-center justify-center overflow-hidden rounded-lg bg-background">
+            <div className="absolute container mx-auto flex -z-10 h-[1600px] w-[99%] items-center justify-center overflow-hidden rounded-lg bg-background">
                 <AnimatedGridPattern
                     numSquares={30}
                     maxOpacity={0.1}
@@ -57,9 +57,9 @@ export default function Navbar() {
                     height={160}
                 />
                 <nav>
-                    <div className={`${menuHandler ? 'max-xl:opacity-100 max-xl:scale-100 max-xl:right-0' : 'max-scale-80 max-xl:opacity-0 max-xl:-right-72'} right-0 transition-all z-20 transform duration-500 ease-in-out flex justify-center items-center gap-8 max-xl:absolute max-xl:block top-0 max-xl:border-2 text-lg max-xl:bg-white max-sm:rounded-br-none max-sm:rounded-tr-none max-xl:leading-7 max-xl:w-72 max-sm:text-sm max-xl:text-sm max-xl:min-h-screen`}>
+                    <div className={`${menuHandler ? 'max-xl:opacity-100 max-xl:scale-100 max-xl:right-0' : 'max-scale-80 max-xl:opacity-0 max-xl:-right-72'} dark:bg-transparent right-0 transition-all  z-20 transform duration-500 ease-in-out flex justify-center items-center gap-8 max-xl:absolute max-xl:block top-0 max-xl:border-2 text-lg max-xl:bg-white max-sm:rounded-br-none max-sm:rounded-tr-none max-xl:leading-7 max-xl:w-72 max-sm:text-sm max-xl:text-sm max-xl:min-h-screen`}>
                         <div className={`max-xl:${menuHandler ? 'opacity-100 scale-100' : "opacity-0 scale-90"} flex h-24 justify-start dark:bg-[#111111] absolute xl:opacity-0 items-center top-0 w-full max-lg:bg-[#f4f4f4]`}>
-                            <Link href={'/login'} className="flex justify-center items-center text-lg">ورود | عضویت</Link>
+                            <Link href={'/login'} className="flex justify-center items-center text-lg w-full">ورود | عضویت</Link>
                             {/* <Image
                                 className="rounded-full m-2"
                                 src="/images/noimage.jpg"
@@ -72,7 +72,7 @@ export default function Navbar() {
                                 <p>چهارشنبه 15 اسفند 1403</p>
                             </div> */}
                         </div>
-                        <ul className="my-2 text-lg max-md:border-b-2 dark:border-slate-500 max-xl:px-5 max-md:pb-6 md:pt-2 md:px-2 flex justify-center items-center max-xl:items-start gap-5 max-xl:flex-col max-xl:mt-28">
+                        <ul className="my-2 text-lg max-md:border-b-2  dark:border-slate-500 max-xl:px-5 max-md:pb-6 md:pt-2 md:px-2 flex justify-center items-center max-xl:items-start gap-5 max-xl:flex-col max-xl:mt-28">
                             <li>
                                 <Link href="">دوره های آموزشی</Link>
                             </li>
@@ -84,7 +84,7 @@ export default function Navbar() {
                             </li>
                         </ul>
                         <div className="w-auto mx-3 xl:hidden dark:border-1 dark:border-slate-400 h-12 my-5 px-2 flex justify-center items-center border-2 rounded-lg max-sm:text-sm">
-                            <input type="text" className="w-full  dark:bg-black dark:text-white text-black h-full rounded-lg px-3 bg-white outline-0" placeholder="دنبال چی میگردی ؟" />
+                            <input type="text" className="w-full dark:bg-black dark:text-white text-black h-full rounded-lg px-3 bg-white outline-0" placeholder="دنبال چی میگردی ؟" />
                             <svg width="24" height="24" viewBox="0 0 24 24" className="fill-none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M22 22L17.5 17.5M20 11C20 15.9706 15.9706 20 11 20C6.02944 20 2 15.9706 2 11C2 6.02944 6.02944 2 11 2C15.9706 2 20 6.02944 20 11Z" stroke="black" className="dark:stroke-white" strokeWidth="2" strokeLinecap="round" />
                             </svg>
@@ -141,13 +141,23 @@ export default function Navbar() {
                     priority
                 />
             </div>
-
-
+            <label onClick={() => setBasket(false)} className={`${basket ? 'block' : 'hidden'} bg-black opacity-50 w-dvw h-dvh top-0 right-0 absolute z-10`}></label>
             <div className="flex gap-3 max-lg:gap-1 justify-center items-center max-xl:flex-row-reverse">
-                <div onClick={() => setBasket((curr) => !curr)} className="w-12 h-12 mr-20 max-sm:mx-2 max-xl:mr-0 max-sm:w-8 max-sm:h-10 max-lg:mr-0 cursor-pointer flex justify-center items-center rounded-full">
-                    <svg className="max-sm:w-6 max-sm:h-6 max-lg:w-7" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path className="dark:fill-white" d="M19 7H16V6C16 4.93913 15.5786 3.92172 14.8284 3.17157C14.0783 2.42143 13.0609 2 12 2C10.9391 2 9.92172 2.42143 9.17157 3.17157C8.42143 3.92172 8 4.93913 8 6V7H5C4.73478 7 4.48043 7.10536 4.29289 7.29289C4.10536 7.48043 4 7.73478 4 8V19C4 19.7956 4.31607 20.5587 4.87868 21.1213C5.44129 21.6839 6.20435 22 7 22H17C17.7956 22 18.5587 21.6839 19.1213 21.1213C19.6839 20.5587 20 19.7956 20 19V8C20 7.73478 19.8946 7.48043 19.7071 7.29289C19.5196 7.10536 19.2652 7 19 7ZM10 6C10 5.46957 10.2107 4.96086 10.5858 4.58579C10.9609 4.21071 11.4696 4 12 4C12.5304 4 13.0391 4.21071 13.4142 4.58579C13.7893 4.96086 14 5.46957 14 6V7H10V6ZM18 19C18 19.2652 17.8946 19.5196 17.7071 19.7071C17.5196 19.8946 17.2652 20 17 20H7C6.73478 20 6.48043 19.8946 6.29289 19.7071C6.10536 19.5196 6 19.2652 6 19V9H8V10C8 10.2652 8.10536 10.5196 8.29289 10.7071C8.48043 10.8946 8.73478 11 9 11C9.26522 11 9.51957 10.8946 9.70711 10.7071C9.89464 10.5196 10 10.2652 10 10V9H14V10C14 10.2652 14.1054 10.5196 14.2929 10.7071C14.4804 10.8946 14.7348 11 15 11C15.2652 11 15.5196 10.8946 15.7071 10.7071C15.8946 10.5196 16 10.2652 16 10V9H18V19Z" fill="black" />
-                    </svg>
+                <div className="relative">
+                    <div onClick={() => setBasket((curr) => !curr)} className="w-12 h-12 mr-20 max-sm:mx-2 max-xl:mr-0 max-sm:w-8 max-sm:h-10 max-lg:mr-0 cursor-pointer flex justify-center items-center rounded-full">
+                        <svg className="max-sm:w-6 max-sm:h-6 max-lg:w-7" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path className="dark:fill-white" d="M19 7H16V6C16 4.93913 15.5786 3.92172 14.8284 3.17157C14.0783 2.42143 13.0609 2 12 2C10.9391 2 9.92172 2.42143 9.17157 3.17157C8.42143 3.92172 8 4.93913 8 6V7H5C4.73478 7 4.48043 7.10536 4.29289 7.29289C4.10536 7.48043 4 7.73478 4 8V19C4 19.7956 4.31607 20.5587 4.87868 21.1213C5.44129 21.6839 6.20435 22 7 22H17C17.7956 22 18.5587 21.6839 19.1213 21.1213C19.6839 20.5587 20 19.7956 20 19V8C20 7.73478 19.8946 7.48043 19.7071 7.29289C19.5196 7.10536 19.2652 7 19 7ZM10 6C10 5.46957 10.2107 4.96086 10.5858 4.58579C10.9609 4.21071 11.4696 4 12 4C12.5304 4 13.0391 4.21071 13.4142 4.58579C13.7893 4.96086 14 5.46957 14 6V7H10V6ZM18 19C18 19.2652 17.8946 19.5196 17.7071 19.7071C17.5196 19.8946 17.2652 20 17 20H7C6.73478 20 6.48043 19.8946 6.29289 19.7071C6.10536 19.5196 6 19.2652 6 19V9H8V10C8 10.2652 8.10536 10.5196 8.29289 10.7071C8.48043 10.8946 8.73478 11 9 11C9.26522 11 9.51957 10.8946 9.70711 10.7071C9.89464 10.5196 10 10.2652 10 10V9H14V10C14 10.2652 14.1054 10.5196 14.2929 10.7071C14.4804 10.8946 14.7348 11 15 11C15.2652 11 15.5196 10.8946 15.7071 10.7071C15.8946 10.5196 16 10.2652 16 10V9H18V19Z" fill="black" />
+                        </svg>
+                    </div>
+                    <div className={`${basket ? 'scale-100 opacity-100' : 'opacity-0 scale-90'} duration-300 dark:bg-black max-xl:left-10 max-sm:left-0 absolute -left-20 z-20 bg-white rounded-md transform transition-all max- w-96 h-52 border-2`}>
+                        <div className="flex justify-between items-center border-b-2 p-3 text-sm">
+                            <h2>سبد خرید من</h2>
+                            <p><span>0</span> دوره</p>
+                        </div>
+                        <div className="flex justify-center items-center my-14">
+                            <p className="text-center">سبد خرید شما خالی است :(</p>
+                        </div>
+                    </div>
                 </div>
                 <Link className="cursor-pointer text-lg max-sm:text-sm max-md:hidden max-xl:text-base" href={'/login'}>ورود | عضویت</Link>
                 <div onClick={() => { setToggleMode((curr) => !curr); darkAndLIghtMode() }} className="w-8 h-12 duration-500 transition-all max-xl:hidden ease-in-out  cursor-pointer max-md:hidden flex  justify-center items-center rounded-full">
@@ -171,17 +181,6 @@ export default function Navbar() {
                             </svg>
                         )
                     }
-                </div>
-            </div>
-
-            <label onClick={() => setBasket(false)} className={`${basket ? 'block' : 'hidden'} bg-black opacity-50 w-dvw h-dvh top-0 right-0 absolute z-10`}></label>
-            <div className={`${basket ? 'scale-100 opacity-100' : 'opacity-0 scale-90'} duration-300 dark:bg-black absolute z-20 bg-white right-[75%] left-[20%] max-2xl:right-[70%] translate-x-[50%] max-sm:w-80 max-sm:left-[50%] max-sm:right-[50%] max-sm:translate-x-[50%] not-first:top-24 rounded-md transform transition-all w-96 h-52 border-2`}>
-                <div className="flex justify-between items-center border-b-2 p-3 text-sm">
-                    <h2>سبد خرید من</h2>
-                    <p><span>0</span> دوره</p>
-                </div>
-                <div className="flex justify-center items-center my-14">
-                    <p className="text-center">سبد خرید شما خالی است :(</p>
                 </div>
             </div>
         </div>
