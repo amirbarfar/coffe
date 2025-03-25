@@ -17,7 +17,7 @@ export default function main() {
                     <li className="bg-[#00000033] dark:bg-[#ffffff83]"></li>
                 </ul>
             </div>
-            <h1 className="text-2xl text-center my-20 font-bold">دوره های بارنستا</h1>
+            <h1 className="text-2xl text-center my-20 font-bold max-sm:mt-8 max-sm:text-xl">دوره های بارنستا</h1>
             <div className="flex justify-center items-center gap-20 mb-10 max-lg:gap-10 max-lg:mx-5 max-md:flex-col">
                 <div className="h-[560px] flex flex-col w-[360px] rounded-2xl font-medium shadow-2xl bg-white dark:bg-[#151515] dark:text-white">
                     <Image src="/images/course-images/1.webp" alt="image-main" className="rounded-tr-2xl h-80 rounded-tl-2xl" width="360" height="100" />
