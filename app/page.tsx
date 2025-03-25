@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import Header from "./Header";
+import Main from "./main";
 
 export default function Home() {
 
@@ -9,6 +10,7 @@ export default function Home() {
     <div className="container mx-auto">
       <Navbar/>
       <Header/>
+      <Main/>
       {/* <Swiper/> */}
     </div>
   );
