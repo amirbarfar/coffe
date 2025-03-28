@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Login() {
@@ -18,9 +18,32 @@ export default function Login() {
     }
   }, [])
 
+  const [email , setEmail] = useState('')
+  const [password , setPassword] = useState('')
+
+
+  async function loginHandler(event: React.FormEvent<HTMLFormElement>){
+    event.preventDefault()
+
+    const response = await fetch('http://localhost:3333/login' , {
+      method : 'POST',
+      headers : {
+        'Content-Type' : 'application/json'
+      },
+      body : JSON.stringify({email , password})
+    })
+
+    if (response.ok) {
+      const res = await response.json()
+      console.log(res);
+    }else{
+      console.log("error");
+    }
+  }
+
   return (
     <div>
-      <button className="m-5" onClick={router.back}>
+      <button className="m-5 rotate-180" onClick={router.back}>
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path className="dark:stroke-white"  d="M18.9998 12H5.99985M10.9998 6L5.70696 11.2929C5.31643 11.6834 5.31643 12.3166 5.70696 12.7071L10.9998 18" stroke="black" strokeWidth="2" strokeLinecap="round" />
         </svg>
@@ -29,14 +52,14 @@ export default function Login() {
         <div className="basis-1/2">
           <h2 className="text-2xl mb-5 max-lg:text-lg max-lg:mb-2">خیلی خوش برگشتی به بارنِستا  😎</h2>
           <p className="text-xl max-lg:text-sm">برای ورود ایمیل و رمزتو تو فرم وارد کن اگه هم ثبت نام نکردی جای نگرانی نیس از دکمه پایین برو ثبت نام کن :)</p>
-          <form action="" className="mt-10 flex flex-col gap-5 max-lg:mt-5">
+          <form onSubmit={loginHandler} action="" className="mt-10 flex flex-col gap-5 max-lg:mt-5">
             <div className="flex flex-col gap-2 max-lg:text-sm">
               <label htmlFor="">ایمیل :</label>
-              <input type="email" className="w-full h-12 max-lg:h-10 rounded-md border-2 p-2" />
+              <input onChange={(event) => setEmail(event.target.value)} name="email" type="email" className="w-full h-12 max-lg:h-10 rounded-md border-2 p-2" />
             </div>
             <div className="flex flex-col gap-2 max-lg:text-sm">
               <label htmlFor="">رمز عبور :</label>
-              <input type="password" className="w-full h-12 max-lg:h-10 rounded-md border-2 p-2" />
+              <input onChange={(event) => setPassword(event.target.value)} name="password" type="password" className="w-full h-12 max-lg:h-10 rounded-md border-2 p-2" />
             </div>
             <div className="grid col-span-8 gap-2 items-center mt-5 max-lg:text-sm">
               <button className="w-full h-12 col-start-1 col-end-7 rounded-md max-lg:h-11 hover:bg-[#1b1b1b] bg-[#2B2B2B] duration-300 cursor-pointer transition-all text-white">ورود</button>
