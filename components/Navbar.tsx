@@ -13,10 +13,14 @@ export default function Navbar() {
     const [basket, setBasket] = useState(false)
     const [toggleMode, setToggleMode] = useState(false)
 
-    const [user, setUser] = useState<{
-        currentDate: string;
-        user: any;
-    } | null>(null)
+
+    interface UserType {
+        id: number;
+        name: string;
+        email: string;
+      }
+
+      const [user, setUser] = useState<{ currentDate: string; user: UserType } | null>(null);
 
 
     async function getDataUsrs() {
