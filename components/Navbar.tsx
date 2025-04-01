@@ -18,9 +18,9 @@ export default function Navbar() {
         id: number;
         name: string;
         email: string;
-      }
+    }
 
-      const [user, setUser] = useState<{ currentDate: string; user: UserType } | null>(null);
+    const [user, setUser] = useState<{ currentDate: string; user: UserType } | null>(null);
 
 
     async function getDataUsrs() {
@@ -66,19 +66,22 @@ export default function Navbar() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Accept' : 'application/json',
+                'Accept': 'application/json',
                 'Authorization': `Bearer ${token}`
             }
         });
 
         if (response.ok) {
             console.log('خروج موفقیت‌آمیز بود!');
-            toast.error('شما از حساب کاربری خود بیرون رفتید :(')
+            toast.loading('شما از حساب کاربری خود بیرون رفتید :(')
             localStorage.removeItem('token');
+            window.location.reload();
         } else {
             console.log('خطا در خروج از حساب:', await response.json());
         }
+        
     }
+
 
 
     function darkAndLIghtMode() {

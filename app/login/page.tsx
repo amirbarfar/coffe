@@ -42,6 +42,7 @@ export default function Login() {
       localStorage.setItem('token' , res.token)
       setToken(res.token)
       toast.success('ورود موفقیت آمیز بود :)')
+      router.push('/')
       console.log(res);
     }else{
       console.log("error");

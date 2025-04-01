@@ -45,6 +45,7 @@ export default function Page() {
         setToken(data.token);
         localStorage.setItem('token', data.token);
         toast.success('ثبت نام موفقیت آمیز بود :)')
+        router.push('/')
         // router.push('/')
       } else {
         console.error('خطا در ثبت‌نام:', data);
