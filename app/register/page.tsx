@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation";
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Page() {
 
@@ -18,27 +19,30 @@ export default function Page() {
     }
   }, [])
 
-  const [name , setName] = useState('')
-  const [password , setPassword] = useState('')
-  const [email , setEmail] = useState('')
 
+  const [name, setName] = useState('')
+  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('')
+  const [token, setToken] = useState('');
 
-  async function registerUser(event: React.FormEvent<HTMLFormElement>){
+  async function registerUser(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
     try {
       const response = await fetch('http://localhost:3333/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify({ email, password, name }),
       });
   
-      const data = await response.json(); 
+      const data = await response.json();
       if (response.ok) {
-        console.log('ثبت‌نام موفقیت‌آمیز:', data);
-        console.log(response);
-        
+        setToken(data.token);
+        localStorage.setItem('token', data.token);
+        toast.success('ثبت نام موفقیت آمیز بود :)')
+        // router.push('/')
       } else {
         console.error('خطا در ثبت‌نام:', data);
       }
@@ -49,6 +53,7 @@ export default function Page() {
 
   return (
     <div>
+      <Toaster />
       <button className="m-5 rotate-180" onClick={router.back}>
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path className="dark:stroke-white" d="M18.9998 12H5.99985M10.9998 6L5.70696 11.2929C5.31643 11.6834 5.31643 12.3166 5.70696 12.7071L10.9998 18" stroke="black" strokeWidth="2" strokeLinecap="round" />

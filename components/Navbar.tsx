@@ -5,12 +5,75 @@ import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern"
 import Image from "next/image"
 import Link from "next/link";
 import { useEffect, useState } from "react"
+import toast from "react-hot-toast";
 
 export default function Navbar() {
 
     const [menuHandler, setMenuHandler] = useState(false)
     const [basket, setBasket] = useState(false)
     const [toggleMode, setToggleMode] = useState(false)
+
+    const [user, setUser] = useState<{
+        currentDate: string;
+        user: any; name: string
+    } | null>(null)
+
+
+    async function getDataUsrs() {
+        const token = await localStorage.getItem('token');
+        console.log(localStorage.getItem('token'))
+
+        if (!token) {
+            console.log('توکن یافت نشد');
+            return;
+        }
+        const response = await fetch('http://localhost:3333/me', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        })
+
+        if (response.ok) {
+            console.log(token);
+            const res = await response.json()
+            setUser(res)
+            console.log(res);
+        } else {
+            console.log('error');
+        }
+    }
+
+    useEffect(() => {
+        getDataUsrs();
+    }, []);
+
+    async function logout() {
+        const token = localStorage.getItem('token');
+
+        if (!token) {
+            console.log('توکن یافت نشد، کاربر از قبل خارج شده است.');
+            return;
+        }
+
+        const response = await fetch('http://localhost:3333/logout', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (response.ok) {
+            console.log('خروج موفقیت‌آمیز بود!');
+            toast.error('شما از حساب کاربری خود بیرون رفتید :(')
+            localStorage.removeItem('token');
+        } else {
+            console.log('خطا در خروج از حساب:', await response.json());
+        }
+    }
 
 
     function darkAndLIghtMode() {
@@ -23,6 +86,7 @@ export default function Navbar() {
         }
     }
 
+
     useEffect(() => {
         const result: string | null = localStorage.getItem('mode')
         if (result === 'dark') {
@@ -34,6 +98,7 @@ export default function Navbar() {
             document.documentElement.classList.add(result)
         }
     }, [])
+
 
     return (
         <div className="flex justify-between items-center py-1 font-medium px-2 mb-10 max-sm:px-0">
@@ -59,18 +124,25 @@ export default function Navbar() {
                 <nav>
                     <div className={`${menuHandler ? 'max-xl:opacity-100 max-xl:scale-100 max-xl:right-0' : 'max-scale-80 max-xl:opacity-0 max-xl:-right-72'} dark:bg-black xl:dark:bg-transparent right-0 transition-all  z-20 transform duration-500 ease-in-out flex justify-center items-center gap-8 max-xl:absolute max-xl:block top-0 max-xl:border-2 text-lg max-xl:bg-white max-sm:rounded-br-none max-sm:rounded-tr-none max-xl:leading-7 max-xl:w-72 max-sm:text-sm max-xl:text-sm max-xl:min-h-screen`}>
                         <div className={`max-xl:${menuHandler ? 'opacity-100 scale-100' : "opacity-0 scale-90"} flex h-24 justify-start dark:bg-[#111111] absolute xl:opacity-0 items-center top-0 w-full max-lg:bg-[#f4f4f4]`}>
-                            <Link href={'/login'} className="flex justify-center items-center text-lg w-full">ورود | عضویت</Link>
-                            {/* <Image
-                                className="rounded-full m-2"
-                                src="/images/noimage.jpg"
-                                alt="Logo"
-                                width={70}
-                                height={70}
-                            />
-                            <div>
-                                <h2>امیرحسین برفر</h2>
-                                <p>چهارشنبه 15 اسفند 1403</p>
-                            </div> */}
+                            {
+                                user ? (
+                                    <div className="flex justify-center items-center gao-5">
+                                        <Image
+                                            className="rounded-full m-2"
+                                            src="/images/noimage.jpg"
+                                            alt="Logo"
+                                            width={70}
+                                            height={70}
+                                        />
+                                        <div>
+                                            <h2>{user.user.name}</h2>
+                                            <p>{user.currentDate}</p>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <Link href={'/login'} className="flex justify-center items-center text-lg w-full">ورود | عضویت</Link>
+                                )
+                            }
                         </div>
                         <ul className="my-2 text-lg max-md:border-b-2  dark:border-slate-500 max-xl:px-5 max-md:pb-6 md:pt-2 md:px-2 flex justify-center items-center max-xl:items-start gap-5 max-xl:flex-col max-xl:mt-28">
                             <li>
@@ -121,9 +193,12 @@ export default function Navbar() {
                                 </div>
                             </div>
                         </div>
-                        {/* <div className="max-xl:flex hidden w-full h-12 justify-center items-center mt-3 ">
-                            <button className="w-full h-full mx-2 bg-red-500 duration-300 cursor-pointer hover:bg-red-600 transition-all ease-in-out text-white rounded-lg">خروج از حساب کاربری</button>
-                        </div> */}
+                        {
+                            user &&
+                            <div className="max-xl:flex hidden w-full h-12 justify-center items-center mt-3 ">
+                                <button onClick={logout} className="w-full h-full mx-2 bg-red-500 duration-300 cursor-pointer hover:bg-red-600 transition-all ease-in-out text-white rounded-lg">خروج از حساب کاربری</button>
+                            </div>
+                        }
                     </div>
                     <div className="max-xl:block hidden max-sm:w-8" onClick={() => setMenuHandler((curr) => !curr)}>
                         <svg className="w-6 h-6 max-sm:w-5" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">

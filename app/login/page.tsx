@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function Login() {
 
@@ -20,6 +21,7 @@ export default function Login() {
 
   const [email , setEmail] = useState('')
   const [password , setPassword] = useState('')
+  const [token , setToken] = useState('')
 
 
   async function loginHandler(event: React.FormEvent<HTMLFormElement>){
@@ -28,13 +30,18 @@ export default function Login() {
     const response = await fetch('http://localhost:3333/login' , {
       method : 'POST',
       headers : {
-        'Content-Type' : 'application/json'
+        'Content-Type' : 'application/json',
+        'Accept' : 'application/json',
+        Authorization : `Bearer ${token}`
       },
       body : JSON.stringify({email , password})
     })
 
     if (response.ok) {
       const res = await response.json()
+      localStorage.setItem('token' , res.token)
+      setToken(res.token)
+      toast.success('ورود موفقیت آمیز بود :)')
       console.log(res);
     }else{
       console.log("error");

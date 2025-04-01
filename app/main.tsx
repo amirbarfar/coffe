@@ -1,6 +1,7 @@
 import Image from "next/image"
 
 export default function main() {
+
     return (
         <div className="mt-24 w-full backdrop-blur-2xl">
             <h1 className="text-2xl text-center my-20 max-sm:my-10 font-bold pt-10 max-sm:pt-10 max-sm:text-xl">دوره های بارنستا</h1>
@@ -45,3 +46,4 @@ export default function main() {
         </div>
     )
 }
+
