@@ -62,6 +62,7 @@ export default function Navbar() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Accept' : 'application/json',
                 'Authorization': `Bearer ${token}`
             }
         });

@@ -25,6 +25,9 @@ export default function Page() {
   const [email, setEmail] = useState('')
   const [token, setToken] = useState('');
 
+  console.log(token);
+  
+
   async function registerUser(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
     try {
