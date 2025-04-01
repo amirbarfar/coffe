@@ -15,7 +15,7 @@ export default function Navbar() {
 
     const [user, setUser] = useState<{
         currentDate: string;
-        user: any; name: string
+        user: any;
     } | null>(null)
 
 
