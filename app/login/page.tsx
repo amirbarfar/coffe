@@ -76,20 +76,20 @@ export default function Login() {
 
           <form onSubmit={handleSubmit(onSubmit)} className="mt-10 flex flex-col gap-5">
             <div className="flex flex-col gap-2">
-              <label>ایمیل :</label>
+              <label className="max-sm:text-sm">ایمیل :</label>
               <input {...register("email")} type="email" className="w-full h-12 rounded-md border-2 p-2" />
-              {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+              {errors.email && <p className="text-red-500 text-xs">{errors.email.message}</p>}
             </div>
 
             <div className="flex flex-col gap-2">
-              <label>رمز عبور :</label>
+              <label className="max-sm:text-sm">رمز عبور :</label>
               <input {...register("password")} type="password" className="w-full h-12 rounded-md border-2 p-2" />
-              {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
+              {errors.password && <p className="text-red-500 text-xs">{errors.password.message}</p>}
             </div>
 
             <div className="grid col-span-8 gap-2 items-center mt-5">
-              <button className="w-full h-12 col-start-1 col-end-7 rounded-md bg-[#2B2B2B] hover:bg-[#1b1b1b] text-white">ورود</button>
-              <Link className="col-start-7 col-end-9 h-12 bg-white border-2 text-black hover:bg-[#2B2B2B] hover:text-white rounded-md flex justify-center items-center" href={'/register'}>ثبت نام؟</Link>
+              <button className="w-full h-12 col-start-1 col-end-7 rounded-md bg-[#2B2B2B] hover:bg-[#1b1b1b] text-white max-sm:text-sm">ورود</button>
+              <Link className="col-start-7 col-end-9 h-12 bg-white border-2 text-black hover:bg-[#2B2B2B] hover:text-white rounded-md flex max-sm:text-sm justify-center items-center" href={'/register'}>ثبت نام؟</Link>
             </div>
           </form>
         </div>

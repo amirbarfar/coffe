@@ -87,19 +87,19 @@ export default function Page() {
             <div className="flex flex-col gap-2 max-lg:text-sm">
               <label>نام و نام خانوادگی :</label>
               <input {...register("name")} type="text" className="w-full h-12 rounded-md border-2 p-2" />
-              {errors.name && <span className="text-red-500 text-sm">{errors.name.message}</span>}
+              {errors.name && <span className="text-red-500 text-xs">{errors.name.message}</span>}
             </div>
 
             <div className="flex flex-col gap-2 max-lg:text-sm">
               <label>ایمیل :</label>
               <input {...register("email")} type="email" className="w-full h-12 rounded-md border-2 p-2" />
-              {errors.email && <span className="text-red-500 text-sm">{errors.email.message}</span>}
+              {errors.email && <span className="text-red-500 text-xs">{errors.email.message}</span>}
             </div>
 
             <div className="flex flex-col gap-2 max-lg:text-sm">
               <label>رمز عبور :</label>
               <input {...register("password")} type="password" className="w-full h-12 rounded-md border-2 p-2" />
-              {errors.password && <span className="text-red-500 text-sm">{errors.password.message}</span>}
+              {errors.password && <span className="text-red-500 text-xs">{errors.password.message}</span>}
             </div>
 
             <div className="grid col-span-8 gap-2 items-center mt-5 max-lg:text-sm">
