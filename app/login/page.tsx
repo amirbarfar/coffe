@@ -71,8 +71,8 @@ export default function Login() {
       </button>
       <div className="container mx-auto my-36 max-md:my-8 font-bold flex justify-between items-center gap-10 max-md:flex-col-reverse max-md:px-5">
         <div className="basis-1/2">
-          <h2 className="text-2xl mb-5">خیلی خوش برگشتی به بارنِستا 😎</h2>
-          <p className="text-xl">برای ورود ایمیل و رمزتو تو فرم وارد کن اگه هم ثبت نام نکردی جای نگرانی نیس از دکمه پایین برو ثبت نام کن :)</p>
+          <h2 className="text-2xl mb-5 max-lg:text-lg">خیلی خوش برگشتی به بارنِستا 😎</h2>
+          <p className="text-xl max-sm:text-sm">برای ورود ایمیل و رمزتو تو فرم وارد کن اگه هم ثبت نام نکردی جای نگرانی نیس از دکمه پایین برو ثبت نام کن :)</p>
 
           <form onSubmit={handleSubmit(onSubmit)} className="mt-10 flex flex-col gap-5">
             <div className="flex flex-col gap-2">
