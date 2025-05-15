@@ -9,7 +9,6 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-// 🧠 تعریف اسکیمای اعتبارسنجی فرم با zod
 const schema = z.object({
   name: z.string().min(2, "نام حداقل باید ۲ حرف داشته باشد"),
   email: z.string().email("ایمیل نامعتبر است"),
@@ -39,7 +38,7 @@ export default function Page() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>({ 
+  } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
 
@@ -78,7 +77,7 @@ export default function Page() {
           <path className="dark:stroke-white" d="M18.9998 12H5.99985M10.9998 6L5.70696 11.2929C5.31643 11.6834 5.31643 12.3166 5.70696 12.7071L10.9998 18" stroke="black" strokeWidth="2" strokeLinecap="round" />
         </svg>
       </button>
-      <div className="container mx-auto my-36 max-md:my-8 font-bold flex justify-between items-center gap-10 max-md:flex-col-reverse max-md:px-5">
+      <div className="container mx-auto my-28 max-md:my-8 font-bold flex justify-between items-center gap-10 max-md:flex-col-reverse max-md:px-5">
         <div className="basis-1/2">
           <h2 className="text-2xl mb-5 max-lg:text-lg max-lg:mb-2">حدس میزنم ثبت نام نکردی تا حالا 😎</h2>
           <p className="text-xl max-lg:text-sm">برای ثبت نام اسم و ایمیل و رمزی که میخوای رو تو فرم بنویس و اگه هم ثبت نام کردی قبلا از دکمه پایین برو وارد شو به حسابت :)</p>
