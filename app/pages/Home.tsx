@@ -19,7 +19,7 @@ export default function main() {
 
     return (
         <div>
-            <Navbar/>
+            <Navbar />
             <div className="font-medium flex justify-center items-center mt-36 max-xl:flex-col gap-12 px-12 max-sm:px-5 max-xl:mt-5 max-sm:mt-24">
 
                 <div className="flex justify-start items-start flex-col w-1/2 max-xl:items-center max-xl:w-full">
@@ -47,7 +47,7 @@ export default function main() {
                 </div>
             </div>
             <div className="mt-52 w-full max-xl:mt-36 max-sm:mt-52">
-                <h1 className="text-4xl text-center my-20 max-sm:my-10 font-bold max-sm:text-xl pt-10">دوره های بارنستا</h1>
+                <h1 className="text-4xl text-center my-20 max-sm:my-10 font-bold max-sm:text-2xl pt-10">دوره های بارنستا</h1>
                 <div className="flex justify-center items-center gap-20 mb-10 max-lg:gap-10 max-lg:mx-5 max-md:flex-col relative">
                     <div className="h-[560px] flex flex-col w-[360px] rounded-2xl font-medium shadow-2xl bg-white dark:bg-[#151515] dark:text-white">
                         <Image src="/images/course-images/1.webp" alt="image-main" className="rounded-tr-2xl h-80 rounded-tl-2xl" width="360" height="100" />
@@ -87,39 +87,43 @@ export default function main() {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-between items-center mt-52">
-                <div className="flex justify-start items-start flex-col">
-                    <h2 className="text-4xl font-bold">درباره بارنستا چه میگن! 😎</h2>
-                    <p className="text-2xl font-light mt-5">در این بخش نظزاتی از افراد مختلف درمورد بارنستاست.</p>
-                </div>
-                <Swiper
-                    effect={'cards'}
-                    grabCursor={true}
-                    modules={[EffectCards]}
-                    className="mySwiper w-[800px] h-72"
-                >
-                    {dataComments.map((item) => (
-                        <SwiperSlide
-                            key={item.id}
-                            className="bg-white rounded-2xl shadow-lg p-5"
-                        >
-                            <p className="text-gray-600 text-xl p-10 text-center font-bold">{item.discription}</p>
-                            <div className="flex items-center justify-start gap-2 mb-4">
-                                <img
-                                    className="w-16 h-16 rounded-full"
-                                    src={`https://api.dicebear.com/9.x/adventurer/svg?seed=${item.id}`}
-                                    alt="Avatar"
-                                />
-                                <div>
-                                    <h2 className="text-lg font-semibold text-gray-800">{item.title}</h2>
-                                    <p>{item.education_role}</p>
+            <div className="mt-52 max-sm:mt-24 overflow-hidden">
+                <h3 className="text-4xl text-center font-bold mb-10 max-sm:text-2xl">بخش نظرات</h3>
+                <div className="flex justify-between items-center mx-20 max-xl:mx-0 max-xl:flex-col">
+                    <div className="flex justify-start items-start flex-col basis-1/2 max-xl:w-full max-xl:justify-start max-md:justify-center max-md:items-center max-xl:items-start">
+                        <h2 className="text-4xl font-bold max-md:text-xl">درباره بارنستا چه میگن! 😎</h2>
+                        <p className="text-2xl font-light mt-5 max-md:text-lg max-md:text-center max-md:mb-5">در این بخش نظزاتی از افراد مختلف درمورد بارنستاست.</p>
+                    </div>
+                    <Swiper
+                        effect={'cards'}
+                        grabCursor={true}
+                        modules={[EffectCards]}
+                        className="mySwiper w-96 h-72 basis-1/2 max-xl:w-[70%] max-xl:justify-end max-xl:items-end"
+                    >
+                        {dataComments.map((item) => (
+                            <SwiperSlide
+                                key={item.id}
+                                className="bg-white rounded-2xl shadow-lg p-5"
+                            >
+                                <p className="text-gray-600 text-xl p-10 text-center font-bold max-md:text-lg max-sm:p-5 max-sm:text-sm">{item.discription}</p>
+                                <div className="flex items-center justify-start gap-2 mb-4">
+                                    <img
+                                        className="w-16 h-16 rounded-full"
+                                        src={`https://api.dicebear.com/9.x/adventurer/svg?seed=${item.id}`}
+                                        alt="Avatar"
+                                    />
+                                    <div>
+                                        <h2 className="text-lg font-semibold text-gray-800 max-sm:text-base">{item.title}</h2>
+                                        <p className="text-sm">{item.education_role}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
             </div>
+
+
         </div>
     )
 }
