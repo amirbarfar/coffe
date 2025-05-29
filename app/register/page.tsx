@@ -33,7 +33,6 @@ export default function Page() {
     }
   }, []);
 
-  // 🪝 راه‌اندازی فرم با zod + react-hook-form
   const {
     register,
     handleSubmit,
@@ -72,14 +71,14 @@ export default function Page() {
   return (
     <div>
       <Toaster />
-      <button className="m-5 rotate-180" onClick={router.back}>
+      <button className="m-5 rotate-180 cursor-pointer" onClick={() =>  router.push('/')}>
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
           <path className="dark:stroke-white" d="M18.9998 12H5.99985M10.9998 6L5.70696 11.2929C5.31643 11.6834 5.31643 12.3166 5.70696 12.7071L10.9998 18" stroke="black" strokeWidth="2" strokeLinecap="round" />
         </svg>
       </button>
       <div className="container mx-auto my-28 max-md:my-8 font-bold flex justify-between items-center gap-10 max-md:flex-col-reverse max-md:px-5">
         <div className="basis-1/2">
-          <h2 className="text-2xl mb-5 max-lg:text-lg max-lg:mb-2">حدس میزنم ثبت نام نکردی تا حالا 😎</h2>
+          <h2 className="text-2xl mb-5 max-lg:text-lg max-lg:mb-2">حدس میزنم ثبت نام نکردی تا حالا</h2>
           <p className="text-xl max-lg:text-sm">برای ثبت نام اسم و ایمیل و رمزی که میخوای رو تو فرم بنویس و اگه هم ثبت نام کردی قبلا از دکمه پایین برو وارد شو به حسابت :)</p>
           
           <form onSubmit={handleSubmit(onSubmit)} className="mt-10 flex flex-col gap-5 max-lg:mt-5">

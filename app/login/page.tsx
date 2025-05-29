@@ -64,14 +64,14 @@ export default function Login() {
 
   return (
     <div>
-      <button className="m-5 rotate-180" onClick={router.back}>
+      <button className="m-5 rotate-180" onClick={() => router.push('/')}>
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
           <path className="dark:stroke-white" d="M18.9998 12H5.99985M10.9998 6L5.70696 11.2929C5.31643 11.6834 5.31643 12.3166 5.70696 12.7071L10.9998 18" stroke="black" strokeWidth="2" strokeLinecap="round" />
         </svg>
       </button>
       <div className="container mx-auto my-28 max-md:my-8 font-bold flex justify-between items-center gap-10 max-md:flex-col-reverse max-md:px-5">
         <div className="basis-1/2">
-          <h2 className="text-2xl mb-5 max-lg:text-lg">خیلی خوش برگشتی به بارنِستا 😎</h2>
+          <h2 className="text-2xl mb-5 max-lg:text-lg">خیلی خوش برگشتی به بارنِستا</h2>
           <p className="text-xl max-sm:text-sm">برای ورود ایمیل و رمزتو تو فرم وارد کن اگه هم ثبت نام نکردی جای نگرانی نیس از دکمه پایین برو ثبت نام کن :)</p>
 
           <form onSubmit={handleSubmit(onSubmit)} className="mt-10 flex flex-col gap-5">
