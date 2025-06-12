@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { dataShop } from '@/consts/consts';
 
@@ -15,7 +15,7 @@ export default function Shop() {
     const progressCircle = useRef<HTMLDivElement>(null);
     const progressContent = useRef<HTMLSpanElement>(null);
 
-    const onAutoplayTimeLeft = (s: any, time: number, progress: number) => {
+    const onAutoplayTimeLeft = (time: number, progress: number) => {
         if (progressCircle.current) {
             progressCircle.current.style.setProperty('--progress', `${1 - progress}`);
         }
