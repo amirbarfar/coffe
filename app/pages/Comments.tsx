@@ -2,15 +2,10 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { EffectCards } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
+import { dataComments } from "@/consts/consts";
 
 export default function Comments() {
 
-        const dataComments = [
-        { id: 1, title: 'علی محمدی', image: '', education_role: 'هنرآموزی بارنستا', discription: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است' },
-        { id: 2, title: 'احمد رضایی', image: '', education_role: 'هنرآموزی بارنستا', discription: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است' },
-        { id: 3, title: 'امیر برفر', image: '', education_role: 'هنرآموزی بارنستا', discription: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است' },
-        { id: 4, title: 'متین سلیمانی', image: '', education_role: 'هنرآموزی بارنستا', discription: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است' },
-    ]
 
     return (
         <div className="mt-52 max-sm:mt-24 overflow-hidden">

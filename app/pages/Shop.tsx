@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { dataShop } from '@/consts/consts';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -22,29 +23,6 @@ export default function Shop() {
             progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
         }
     };
-
-    const dataShop = [
-        {
-            tools: [
-                { id: 1, image: './images/shopImages/1.png', name: "اسپرسو ماشین", price: '2500000', discount: '20' },
-                { id: 2, image: './images/shopImages/1.png', name: "آسیاب قهوه", price: '100000', discount: '12' },
-                { id: 3, image: './images/shopImages/1.png', name: "تمپر", price: '32000', discount: '15' },
-                { id: 4, image: './images/shopImages/1.png', name: "موکاپات", price: '54200', discount: '10' },
-                { id: 5, image: './images/shopImages/1.png', name: "موکاپات", price: '54200', discount: '10' },
-                { id: 6, image: './images/shopImages/1.png', name: "موکاپات", price: '54200', discount: '10' },
-
-            ],
-            consumables: [
-                { id: 1, image: './images/shopImages/2.png', name: "دانه قهوه (روست‌های مختلف: اسپرسو، ترکیبی، تک‌خاستگاه و...)", price: '250000', discount: '12' },
-                { id: 2, image: './images/shopImages/2.png', name: "شیر (حیوانی یا گیاهی مثل بادام، جو، نارگیل)", price: '35000', discount: '30' },
-                { id: 3, image: './images/shopImages/2.png', name: "شربت‌های طعم‌دهنده (وانیل، کارامل، فندق...)", price: '54000', discount: '10' },
-                { id: 4, image: './images/shopImages/2.png', name: "پودر شکلات، دارچین، هل", price: '98200', discount: '20' },
-                { id: 5, image: './images/shopImages/2.png', name: "پودر شکلات، دارچین، هل", price: '98200', discount: '20' },
-                { id: 6, image: './images/shopImages/2.png', name: "پودر شکلات، دارچین، هل", price: '98200', discount: '20' },
-
-            ]
-        }
-    ]
     return (
         <div className="mt-44">
             <div className="font-bold flex justify-between items-center max-lg:mx-2">
@@ -88,7 +66,7 @@ export default function Shop() {
                                 key={`tool-${tool.id}`}
                                 className="shadow-xl dark:bg-[#151515] w-96 h-[640px] rounded-2xl font-bold mb-10 flex flex-col items-center"
                             >
-                                <img src={tool.image} alt={tool.name} />
+                                <img className="hover:scale-110 transition-all duration-200 ease-in-out" src={tool.image} alt={tool.name} />
                                 <div className="p-5">
                                     <h3 className="text-xl h-7">{tool.name}</h3>
                                     <div>
@@ -145,7 +123,7 @@ export default function Shop() {
                                 key={`consumable-${consumable.id}`}
                                 className="shadow-xl dark:bg-[#151515]  rounded-2xl font-bold "
                             >
-                                <img src={consumable.image} alt={consumable.name} className="w-full h-auto object-cover" />
+                                <img src={consumable.image} alt={consumable.name} className="w-full h-auto object-cover hover:scale-110 transition-all duration-200 ease-in-out" />
                                 <div className="p-5">
                                     <h3 className="text-xl h-14">{consumable.name}</h3>
                                     <div>
